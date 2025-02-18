@@ -1,0 +1,181 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'count[29]'
+Slack : -12.027
+TNS   : -11594.175
+
+Type  : Slow 1100mV 85C Model Setup 'TOP_reset'
+Slack : -10.519
+TNS   : -3856.696
+
+Type  : Slow 1100mV 85C Model Setup 'FPGA_clock'
+Slack : -3.141
+TNS   : -40.623
+
+Type  : Slow 1100mV 85C Model Hold 'TOP_reset'
+Slack : -3.150
+TNS   : -422.211
+
+Type  : Slow 1100mV 85C Model Hold 'FPGA_clock'
+Slack : -1.744
+TNS   : -1.744
+
+Type  : Slow 1100mV 85C Model Hold 'count[29]'
+Slack : -1.499
+TNS   : -41.320
+
+Type  : Slow 1100mV 85C Model Recovery 'count[29]'
+Slack : -4.952
+TNS   : -5301.924
+
+Type  : Slow 1100mV 85C Model Removal 'count[29]'
+Slack : 0.565
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'TOP_reset'
+Slack : -2.264
+TNS   : -4555.834
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'count[29]'
+Slack : -0.394
+TNS   : -584.197
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'FPGA_clock'
+Slack : -0.394
+TNS   : -15.574
+
+Type  : Slow 1100mV 0C Model Setup 'count[29]'
+Slack : -12.149
+TNS   : -11695.712
+
+Type  : Slow 1100mV 0C Model Setup 'TOP_reset'
+Slack : -10.724
+TNS   : -3935.901
+
+Type  : Slow 1100mV 0C Model Setup 'FPGA_clock'
+Slack : -3.436
+TNS   : -43.371
+
+Type  : Slow 1100mV 0C Model Hold 'TOP_reset'
+Slack : -3.038
+TNS   : -394.729
+
+Type  : Slow 1100mV 0C Model Hold 'FPGA_clock'
+Slack : -1.683
+TNS   : -1.683
+
+Type  : Slow 1100mV 0C Model Hold 'count[29]'
+Slack : -1.594
+TNS   : -75.258
+
+Type  : Slow 1100mV 0C Model Recovery 'count[29]'
+Slack : -4.703
+TNS   : -5034.766
+
+Type  : Slow 1100mV 0C Model Removal 'count[29]'
+Slack : 0.474
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'TOP_reset'
+Slack : -2.440
+TNS   : -4931.197
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'count[29]'
+Slack : -0.394
+TNS   : -565.657
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'FPGA_clock'
+Slack : -0.394
+TNS   : -17.629
+
+Type  : Fast 1100mV 85C Model Setup 'count[29]'
+Slack : -7.367
+TNS   : -6988.435
+
+Type  : Fast 1100mV 85C Model Setup 'TOP_reset'
+Slack : -5.685
+TNS   : -2095.155
+
+Type  : Fast 1100mV 85C Model Setup 'FPGA_clock'
+Slack : -1.295
+TNS   : -10.695
+
+Type  : Fast 1100mV 85C Model Hold 'TOP_reset'
+Slack : -1.859
+TNS   : -262.936
+
+Type  : Fast 1100mV 85C Model Hold 'FPGA_clock'
+Slack : -1.007
+TNS   : -1.007
+
+Type  : Fast 1100mV 85C Model Hold 'count[29]'
+Slack : -0.813
+TNS   : -11.083
+
+Type  : Fast 1100mV 85C Model Recovery 'count[29]'
+Slack : -2.884
+TNS   : -3088.450
+
+Type  : Fast 1100mV 85C Model Removal 'count[29]'
+Slack : 0.266
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'TOP_reset'
+Slack : -1.559
+TNS   : -1794.410
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'FPGA_clock'
+Slack : -0.338
+TNS   : -2.434
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'count[29]'
+Slack : 0.032
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'count[29]'
+Slack : -6.783
+TNS   : -6431.030
+
+Type  : Fast 1100mV 0C Model Setup 'TOP_reset'
+Slack : -5.363
+TNS   : -1986.165
+
+Type  : Fast 1100mV 0C Model Setup 'FPGA_clock'
+Slack : -1.302
+TNS   : -9.960
+
+Type  : Fast 1100mV 0C Model Hold 'TOP_reset'
+Slack : -1.697
+TNS   : -221.163
+
+Type  : Fast 1100mV 0C Model Hold 'FPGA_clock'
+Slack : -1.003
+TNS   : -1.003
+
+Type  : Fast 1100mV 0C Model Hold 'count[29]'
+Slack : -0.903
+TNS   : -36.985
+
+Type  : Fast 1100mV 0C Model Recovery 'count[29]'
+Slack : -2.750
+TNS   : -2944.922
+
+Type  : Fast 1100mV 0C Model Removal 'count[29]'
+Slack : 0.144
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'TOP_reset'
+Slack : -1.436
+TNS   : -1705.450
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'FPGA_clock'
+Slack : -0.335
+TNS   : -2.438
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'count[29]'
+Slack : 0.072
+TNS   : 0.000
+
+------------------------------------------------------------

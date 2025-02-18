@@ -1,0 +1,43 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+Package my_components is
+
+		Procedure seg_7 (signal sin: in std_logic_vector(3 downto 0);
+							  signal sout: out std_logic_vector(6 downto 0));
+		component fetch is
+				port (
+						PC_out : out STD_LOGIC_VECTOR (31 downto 0);
+						instruction : out STD_LOGIC_VECTOR (31 downto 0);
+						branch_addr, jump_addr : in STD_LOGIC_VECTOR (31 downto 0);
+						branch_decision, jump_decision, reset, clock : in std_logic
+						);
+		end component;
+
+end Package;
+
+Package Body my_components is
+
+	Procedure seg_7(signal sin: in std_logic_vector(3 downto 0); signal sout: out std_logic_vector(6 downto 0)) is
+	BEGIN
+	
+		case sin is
+			when "0000" => sout <= "1000000" ;
+			when "0001" => sout <= "1111001" ;
+			when "0010" => sout <= "0100100" ;
+			when "0011" => sout <= "0110000" ;
+			when "0100" => sout <= "0011001" ;
+			when "0101" => sout <= "0010010" ;
+			when "0110" => sout <= "0000010" ;
+			when "0111" => sout <= "1111000" ;
+			when "1000" => sout <= "0000000" ;
+			when "1001" => sout <= "0011000" ;
+			when "1010" => sout <= "0001000" ;
+			when "1011" => sout <= "0000011" ;
+			when "1100" => sout <= "1000110" ;
+			when "1101" => sout <= "0100001" ;
+			when "1110" => sout <= "0000110" ;
+			when "1111" => sout <= "0001110" ;
+		end case;
+	end procedure seg_7;
+end package body;

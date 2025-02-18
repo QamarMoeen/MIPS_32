@@ -1,0 +1,82 @@
+entity decode is port (instruction in STD_LOGIC_VECTOR (31 downto 0);
+immediate out STD_LOGIC_VECTOR (31 downto 0); reset in STD LOGIC);
+end decode;
+
+
+
+architecture Behavioral of decode is
+type reg_array is array (0 to 31) of std_logic_vector (31 downto 0);
+shared variable RegFile: reg_array := (--initialize the Register File
+						X"00000000",--Register ZERO Register One
+						X"11111111",
+						X"22222222",
+						X"33333333",
+					others =>
+						X"01010101");
+begin
+
+--Process to write the register file when required
+reg_write: process (reset, memory_data, alu result, clock)
+variable write_value: std_logic_vector (31 downto 0);
+--variable addrl, addr2, addr3: std_logic_vector(4 downto 0);
+variable index: integer := 0;
+begin
+--on reset initialize the registers
+if reset = '1' then
+RegFile := (
+		X"00000000",--Register ZERO Register One
+		X"11111111",
+		X"22222222",
+		X"33333333",
+	others =>
+		X"01010101");
+
+else
+-determine the address of the register to be written, use Figure 8-3 to implement
+if RegDst = '0' then
+--value should be written to register number availble at instruction (20 downto 16)
+else
+--value should be written to register number availble at instruction instruction (15 downto 11)
+end if;
+--Remember for Approach 1, we need to have the integer index to access our Register File, use conv_integer
+--to convert std logic vector to integer value
+--Determine the source operand to be written, i.e., memory or alu result
+if RegWrite = '1' then
+--- if MemToReg = '1' then
+--- write_value = memory_data;
+---else
+-write_value = alu_result;
+---end if;
+
+--- Store write value to the destination register (need to disable this when you test other functions)
+--Process to read register file and pass the operands to the execute module
+reg_read: process (instruction)
+variable rt, rs, imm, rd: std_logic_vector(31 downto 0);
+variable addr1, addr2: integer := 0;
+variable addr_rd: integer := 0;
+begin
+--register addresses for reading the registers
+--addrl will contain the index for Register File to read register rs, availabe at instruction (25 downto 21)
+--addr2 will contain the index for Register File to read register rt, availabe at instruction (20 downto 16)); addr_rd will contain the index for Register File to read register rd, availabe at instruction (15 downto 11));
+--read the register
+Is RegFile (addr1);
+rt: RegFile (addr2);
+rd: RegFile (addr_rd);
+--access immediate from instruction and perform sign extension
+
+--access immediate from instruction and perform sign extension
+imm (15 downto 0) instruction (15 downto 0);
+if instruction (15) = '1' then
+imm (31 downto 16)=x"ffff";
+else
+imm( 1 downto 15) := X"0000";
+end if;
+--compute the jump address.
+jump_addr (31 downto 0) <= .....;
+--bring out signals to the ports of the module
+--register_rs <= IS ;
+--register_rt <= rt;
+--immediate <= imm;
+--you may add rd as well for testing
+--end process reg_read;
+end Behavioral;

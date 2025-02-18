@@ -1,0 +1,61 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity fetch is
+port (
+	PC_out : out STD_LOGIC_VECTOR (31 downto 0);
+	instruction : out STD_LOGIC_VECTOR (31 downto 0);
+	branch_addr, jump_addr : in STD_LOGIC_VECTOR (31 downto 0);
+	branch_decision, jump_decision, reset, clock : in std_logic
+);
+end fetch;
+
+
+architecture bhv of fetch is --instruction memory is created as an array of 32bits and has 16 locations
+type mem_array is array (0 to 15) of std_logic_vector(31 downto 0);
+begin 
+process(clock,reset)
+--initialize the instruction memory
+variable mem: mem_array := (X"00000000",
+									X"11111111",
+									X"22222222",
+									X"33333333",
+									X"44444444",
+									X"55555555",
+									X"66666666",
+									X"77777777",
+									X"88888888",
+									X"99999999",
+									X"AAAAAAAA",
+									X"bbbbbbbb",
+									X"cccccccc",
+									X"dddddddd",
+									X"eeeeeeee",
+									X"ffffffff"
+);
+variable PC: std_logic_vector(31 downto 0);
+variable index : integer := 0;
+begin
+
+	if reset = '1' then
+			PC := X"00000000";
+			instruction <= X"00000000";
+	
+	elsif (clock'event and clock='1') then
+		if (branch_decision = '1') then 
+			PC := branch_addr; 
+		elsif (jump_decision ='1') then 
+			PC := jump_addr; 
+		else
+			PC := PC + "1";
+		end if;
+		 
+		index := conv_integer(PC(3 downto 0));
+		
+	PC_out <= PC;
+	instruction <= mem (index);
+end if;
+end process;
+end bhv;

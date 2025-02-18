@@ -1,0 +1,50 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.my_components.all;
+
+entity wrapper is
+port(
+	clk : in std_logic;
+	reset : in std_logic;
+	branch_decision, jump_decision : in std_logic;
+	hex0: out std_logic_vector(6 downto 0);
+	hex1: out std_logic_vector(6 downto 0);
+	hex2: out std_logic_vector(6 downto 0);
+	hex3: out std_logic_vector(6 downto 0);
+	hex4: out std_logic_vector(6 downto 0);
+	hex5: out std_logic_vector(6 downto 0);
+	hex6: out std_logic_vector(6 downto 0);
+	hex7: out std_logic_vector(6 downto 0)
+);
+end wrapper;
+
+
+architecture behv of wrapper is
+
+signal PC_OUT : std_logic_vector(31 downto 0);
+signal instruction : std_logic_vector(31 downto 0);
+
+begin
+	
+		f1: fetch PORT MAP(clock => clk,
+							reset => reset,
+							branch_decision=>branch_decision,
+							jump_decision=>jump_decision,
+							instruction => instruction,
+							PC_out => PC_OUT,
+							branch_addr => X"00000005",
+							jump_addr => X"0000000A"
+		);
+
+	
+	
+	seg_7(instruction(31 downto 28), hex7);
+	seg_7(instruction(27 downto 24), hex6);
+	seg_7(instruction(23 downto 20), hex5);
+	seg_7(instruction(19 downto 16), hex4);
+	seg_7(instruction(15 downto 12), hex3);
+	seg_7(instruction(11 downto 8), hex2);
+	seg_7(instruction(7 downto 4), hex1);
+	seg_7(instruction(3 downto 0), hex0);
+
+end behv;
